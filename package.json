@@ -1,17 +1,14 @@
 {
-  "name": "inject-loader",
-  "version": "4.0.1",
+  "name": "tv-inject-loader",
+  "version": "4.0.5",
   "description": "A Webpack loader for injecting code into modules via their dependencies",
   "main": "dist/index.js",
   "scripts": {
-    "build": "webpack --config config/webpack.config.js",
-    "build:test": "webpack --config config/webpack.test.config.js",
-    "build:release": "yarn run build && mkdir -p ./dist && cp -f ./tmp/index.js ./dist/index.js",
-    "pretest:unit": "yarn build && yarn build:test",
-    "test:unit": "mocha tmp/testBundle.js --require source-map-support/register",
-    "test:integration": "./script/integration_test",
-    "test": "flow && yarn test:unit && yarn test:integration",
-    "precommit": "pretty-quick --staged"
+    "build-test": "webpack --config config/webpack.test.config.js",
+    "test-unit": "mocha tmp/testBundle.js --require source-map-support/register",
+    "test-integration": "./script/integration_test",
+    "test": "node build/prod-ready && flow && npm run test-unit && npm run test-integration",
+    "build": "webpack --config config/webpack.config.js && node build && cp tmp/index.js dist/index.js && node build  && npm run test"
   },
   "files": [
     "*.md",
