@@ -35,9 +35,6 @@ Object.keys(pkg).forEach(function(key) {
 	}
 });
 
-if (typeof pkg.name !== 'string' || pkg.name.indexOf('@tradingview/') !== 0) {
-	throw new Error('The `name` of package must be started with `@tradingview/`');
-}
 
 // private is used to prevent publishing
 pkg.private = true;

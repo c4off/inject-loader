@@ -1,8 +1,8 @@
 {
-  "name": "@tradingview/inject-loader",
-  "version": "4.0.4",
+  "name": "tv-inject-loader",
+  "version": "4.0.5",
   "description": "A Webpack loader for injecting code into modules via their dependencies",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build-test": "webpack --config config/webpack.test.config.js",
     "test-unit": "mocha tmp/testBundle.js --require source-map-support/register",
