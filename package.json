@@ -1,6 +1,6 @@
 {
   "name": "tv-inject-loader",
-  "version": "4.0.5",
+  "version": "4.0.6",
   "description": "A Webpack loader for injecting code into modules via their dependencies",
   "main": "dist/index.js",
   "scripts": {
